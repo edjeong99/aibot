@@ -53,3 +53,9 @@
     background-color: darkblue;
   }
   
+  .loading {
+    color: gray;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
