@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ChatBox from "./components/ChatBox";
+import InputBox from "./components/InputBox";
+import "./styles.css";
 
-function App() {
+const App = () => {
+  const [messages, setMessages] = useState([]);
+
+  const handleUserMessage = (userMessage) => {
+    const botResponse = getBotResponse(userMessage);
+    setMessages([...messages, { sender: "user", text: userMessage }, { sender: "bot", text: botResponse }]);
+  };
+
+  const getBotResponse = (message) => {
+    message = message.toLowerCase();
+    if (message.includes("location")) {
+      return "We are located at 123 Main Street, Springfield.";
+    } else if (message.includes("hours") || message.includes("open")) {
+      return "We are open from 9 AM to 5 PM, Monday to Friday.";
+    } else {
+      return "I'm sorry, I didn't understand that. Could you please rephrase?";
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>AI Chatbot</h1>
+      <ChatBox messages={messages} />
+      <InputBox onSend={handleUserMessage} />
     </div>
   );
-}
+};
 
 export default App;

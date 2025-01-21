@@ -1,0 +1,55 @@
+.app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .chat-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+    overflow-y: scroll;
+    margin: 0 auto 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    margin: 5px 0;
+  }
+  
+  .message.user {
+    text-align: right;
+    color: blue;
+  }
+  
+  .message.bot {
+    text-align: left;
+    color: green;
+  }
+  
+  .input-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  input {
+    width: 200px;
+    padding: 8px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkblue;
+  }
+  
