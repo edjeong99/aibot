@@ -1,5 +1,6 @@
 # AI Bot Project
 This is a personal project to learn more about incorporating AI to React app.
+Use Wit.ai API
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
