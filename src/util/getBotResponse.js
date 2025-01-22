@@ -2,8 +2,8 @@ import axios from "axios";
 import botResponses from "./botResponses";
 
 const getBotResponse = async (userMessage) => {
-    const apiToken = "L2CFOBZMUZVRVZH6L6N3OIRKXNNLFL5W"; // Replace with your wit.ai token
-    const endpoint = `https://api.wit.ai/message?q=${encodeURIComponent(userMessage)}`;
+  const apiToken = process.env.WIT_AI_TOKEN; // Use an environment variable to store the token
+  const endpoint = `https://api.wit.ai/message?q=${encodeURIComponent(userMessage)}`;
 
     const response = await axios.get(endpoint, {
       headers: {
